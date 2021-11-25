@@ -1,0 +1,4 @@
+.container-fluid div {
+  display: flex;
+  justify-content: space-around;
+}

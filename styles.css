@@ -1,7 +1,7 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .container-fluid div {
@@ -10,5 +10,22 @@
 }
 
 .carousel-item {
-    height: 900px;
+  height: 900px;
+}
+
+.navbar {
+  background-color: #f5d020;
+  background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+  align-items: center;
+  justify-content: center;
+}
+
+.row img {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+}
+
+.menu {
 }

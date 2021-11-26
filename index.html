@@ -67,18 +67,39 @@
       <div class="menu" id="menu">
       <div class="container">
         <div class="row row-cols-3">
-          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image"></div>
-          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image"></div>
-          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image"></div>
-        </div>
-        <div class="container">
-          <div class="row row-cols-3">
-            <div class="col"><img src="./images/pizza.jpg" alt="Pizza image"></div>
-            <div class="col"><img src="./images/pizza.jpg" alt="Pizza image"></div>
-            <div class="col"><img src="./images/pizza.jpg" alt="Pizza image"></div>
+          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image">
+            <form action="">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="BBQ Steak">
+                  BBQ Steak
+                </label>
+              </div>
+              <div class="crust">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="Thin Crust">Thin Crust</option>
+                <option value="Stuffed Crust">Stuffed Crust</option>
+                <option value="Hand Tossed">Hand Tossed</option>
+              </select>
+            </div>
+            </form>
+            <div class="d-grid gap-2 d-md-block text-center">
+              <button class="btn btn-warning" type="button">+</button>
+              <button class="btn btn-warning" type="button">-</button>
+            </div>
+            <br>
+            <form action="">
+              <input class="totalPlaced form-control" type="text" value="" aria-label="readonly input example" readonly>
+            </form>
           </div>
+          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image"></div>
+          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image"></div>
         </div>
       </div>
+      <br>
+
+      <!-- Order Summary -->
       <div class="card" style="width: 18rem;">
         <img src="./images/cart.svg" class="card-img-top" alt="An icon with a lady oushing a shopping cart">
         <div class="card-body">
@@ -91,7 +112,7 @@
           </ul>
           <form action="">
             <input class="btn btn-danger" type="submit" value="Submit">
-          </form> 
+          </form>           
         </div>
       </div>
     </div>

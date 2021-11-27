@@ -6,7 +6,8 @@ $(document).ready( function() {
         if( $(this).html() === "+" ) {
             let new_value = parseInt(current_value)+1;
             input_form.val(new_value);
-        } else {
+        } 
+        if( $(this).html() === "-" ) {
             if (current_value == 0) return;
             let new_value = parseInt(current_value)-1;
             input_form.val(new_value);
@@ -14,12 +15,14 @@ $(document).ready( function() {
     });
 
     class Pizza  {
-        constructor(flavor, size, crust) {
+        constructor(flavor, size, crust, toppings, number) {
             this.flavor = flavor;
             this.toppings = toppings;
             this.size = size;
             this.crust = crust;
+            this.number = number;
         }
+
         getPriceTotal() {
             let toppingsPrice = 100;
             let sizePrices = {
@@ -33,9 +36,9 @@ $(document).ready( function() {
                 Gluten_free: 250,
             }
             return (
-                (this.toppings.length*toppingsPrice) +
-                (sizePrices[this.size])+
-                (crustPrices[this.crust])
+                ( (this.toppings.length*toppingsPrice) +
+                  (sizePrices[this.size])+
+                  (crustPrices[this.crust]) ) * this.number
             );
         }
         
@@ -58,7 +61,15 @@ $(document).ready( function() {
     }
 
     $('form').submit(function getInput(event) {
-        console.log($(this).serializeArray());
+        let pizza = formToDictionary($(this).serializeArray());
+        pizza = new Pizza(pizza.flavor, pizza.Size, pizza.Crust, pizza.Toppings, pizza.pizzas);
+        console.log(pizza);
+        if("cart" in window){
+            window.cart.push(pizza);
+        } else {
+            window.cart = [pizza];
+        }
+        $("#modal").modal('show');
         event.preventDefault();
         return;
     });

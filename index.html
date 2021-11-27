@@ -70,6 +70,7 @@
           <div class="col"><img src="./images/pizza.jpg" alt="Pizza image">
             
             <form>
+              <input type="text" name="flavor" value="bbq-steak" hidden>
               <div class="form-check">
                 <label class="form-check-label fw-bold h4" for="BBQ Steak">
                   BBQ Steak
@@ -77,22 +78,20 @@
               </div>
               <div class="size">
               <select class="form-select" aria-label="Default select example" name="Size">
-                <option selected>Choose Size</option>
-                <option value="Small">Small</option>
+                <option value="Small" selected>Small</option>
                 <option value="Medium">Medium</option>
                 <option value="Large">Large</option>
               </select>
             </div>
               <div class="crust">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Choose Crust</option>
-                <option value="Thin Crust">Thin Crust</option>
+              <select class="form-select" aria-label="Default select example" name="Crust">
+                <option value="Thin Crust" selected>Thin Crust</option>
                 <option value="Stuffed Crust">Stuffed Crust</option>
                 <option value="Gluten Free">Gluten Free</option>
               </select>
             </div>
             <div class="toppings">
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" aria-label="Default select example" name="Toppings">
                 <option selected>Choose Toppings</option>
                 <option value="Cheese">Cheese</option>
                 <option value="Pepperoni">Pepperoni</option>
@@ -102,15 +101,16 @@
             <div class="d-grid gap-2 d-md-block text-center">
               <button class="btn btn-warning" type="button">+</button>
               <button class="btn btn-warning" type="button">-</button>
-              <input class="totalPlaced form-control" type="text" value="0" id="bbq-no" aria-label="readonly input example" readonly>
+              <input class="totalPlaced form-control" type="text" value="0" name="pizzas" aria-label="readonly input example" readonly>
             </div>
+            <button type="submit" class="btn btn-warning">Add to Cart</button>
             </form>
-
             <br>
           </div>
-          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image">
 
+          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image">
             <form>
+              <input type="text" name="flavor" value="Veggie Deluxe" hidden>
               <div class="form-check">
                 <label class="form-check-label fw-bold h4" for="VeggieDeluxe">
                   Veggie Deluxe
@@ -118,22 +118,20 @@
               </div>
               <div class="size">
               <select class="form-select" aria-label="Default select example" name="Size">
-                <option selected>Choose Size</option>
-                <option value="Small">Small</option>
+                <option value="Small" selected>Small</option>
                 <option value="Medium">Medium</option>
                 <option value="Large">Large</option>
               </select>
             </div>
               <div class="crust">
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Choose Crust</option>
-                <option value="Thin Crust">Thin Crust</option>
+              <select class="form-select" aria-label="Default select example" name="Crust">
+                <option value="Thin Crust" selected>Thin Crust</option>
                 <option value="Stuffed Crust">Stuffed Crust</option>
                 <option value="Gluten Free">Gluten Free</option>
               </select>
             </div>
             <div class="toppings">
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" aria-label="Default select example" name="Toppings">
                 <option selected>Choose Toppings</option>
                 <option value="Cheese">Cheese</option>
                 <option value="Pepperoni">Pepperoni</option>
@@ -143,9 +141,9 @@
             <div class="d-grid gap-2 d-md-block text-center">
               <button class="btn btn-warning" type="button">+</button>
               <button class="btn btn-warning" type="button">-</button>
-              <input class="totalPlaced form-control" type="text" value="0" aria-label="readonly input example" readonly>
-
+              <input class="totalPlaced form-control" type="text" value="0" name="pizzas" aria-label="readonly input example" readonly>
             </div>
+            <button type="submit" class="btn btn-warning">Add to Cart</button>
             </form>
             
             <br>
@@ -154,6 +152,7 @@
           <div class="col"><img src="./images/pizza.jpg" alt="Pizza image">
 
           <form>
+            <input type="text" name="flavor" value="hawaiian" hidden>
             <div class="form-check">
               <label class="form-check-label fw-bold h4" for="Hawaiian">
                 Hawaiian
@@ -161,22 +160,20 @@
             </div>
             <div class="size">
             <select class="form-select" aria-label="Default select example" name="Size">
-              <option selected>Choose Size</option>
-              <option value="Small">Small</option>
+              <option value="Small" selected>Small</option>
               <option value="Medium">Medium</option>
               <option value="Large">Large</option>
             </select>
           </div>
             <div class="crust">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Choose Crust</option>
-              <option value="Thin Crust">Thin Crust</option>
+            <select class="form-select" aria-label="Default select example" name="Crust">
+              <option value="Thin Crust" selected>Thin Crust</option>
               <option value="Stuffed Crust">Stuffed Crust</option>
               <option value="Gluten Free">Gluten Free</option>
             </select>
           </div>
           <div class="toppings">
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" name="Toppings">
               <option selected>Choose Toppings</option>
               <option value="Cheese">Cheese</option>
               <option value="Pepperoni">Pepperoni</option>
@@ -186,9 +183,9 @@
           <div class="d-grid gap-2 d-md-block text-center">
             <button class="btn btn-warning" type="button">+</button>
             <button class="btn btn-warning" type="button">-</button>
-            <input class="totalPlaced form-control" type="text" value="0" aria-label="readonly input example" readonly>
+            <input class="totalPlaced form-control" type="text" value="0" name="pizzas" aria-label="readonly input example" readonly>
           </div>
-          <button type="submit" class="btn btn-warning">Submit</button>
+          <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal">Add to Cart</button>
           </form>
           
           
@@ -219,7 +216,22 @@
       </div>
     </div> -->
 
-         
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>

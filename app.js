@@ -13,13 +13,54 @@ $(document).ready( function() {
         }
     });
 
-});
-
-class Pizza  {
-    constructor(flavor, size, crust) {
-        this.flavor = flavor;
-        this.toppings = toppings;
-        this.size = size;
-        this.crust = crust;
+    class Pizza  {
+        constructor(flavor, size, crust) {
+            this.flavor = flavor;
+            this.toppings = toppings;
+            this.size = size;
+            this.crust = crust;
+        }
+        getPriceTotal() {
+            let toppingsPrice = 100;
+            let sizePrices = {
+                Small: 500,
+                Medium: 750,
+                Large: 900
+            };
+            let crustPrices = {
+                Thin: 0,
+                Stuffed: 100,
+                Gluten_free: 250,
+            }
+            return (
+                (this.toppings.length*toppingsPrice) +
+                (sizePrices[this.size])+
+                (crustPrices[this.crust])
+            );
+        }
+        
     }
-}
+
+    function getCartTotal(cart) {
+        let total = 0;
+        cart.forEach(pizza => {
+            total += pizza.getPriceTotal();
+        });
+        return total;
+    }
+
+    function formToDictionary(formData) {
+        let object = {};
+        formData.forEach((key) => {
+            object[key.name] = key.value;    
+        });
+        return object;
+    }
+
+    $('form').submit(function getInput(event) {
+        console.log($(this).serializeArray());
+        event.preventDefault();
+        return;
+    });
+
+});

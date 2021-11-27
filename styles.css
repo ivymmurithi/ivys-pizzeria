@@ -29,8 +29,8 @@
 }
 
 .menu img {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   margin-right: 50%;
 }
 .menu {
@@ -52,7 +52,8 @@
 }
 
 .crust,
-.size, .toppings {
+.size,
+.toppings {
   width: 35%;
 }
 
@@ -61,3 +62,6 @@
   width: 110%;
 }
 
+.modal-content {
+  border: 7px solid #ffc107 !important; 
+}

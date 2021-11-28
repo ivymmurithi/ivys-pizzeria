@@ -46,9 +46,24 @@
   width: 40%;
 }
 
-.totalPlaced {
-  width: 14%;
-  margin-left: 43%;
+.d-grid, .totalPlaced, .btn {
+  width: 30%;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  padding: 3px 4px;
+  margin-left: 5%;
+}
+
+.form-select {
+  width: 85%;
+  padding: 6px 6px;
+  margin: 4%;
+}
+
+.size, .toppings, .crust {
+  margin-left: 4%;
 }
 
 .crust,

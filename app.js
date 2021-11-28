@@ -140,7 +140,7 @@ $(document).ready( function() {
             let html = `
                 <h4>Delivering:</h4><br>
                 ${generateCartEntries()}<br>
-                TO: ${location}<br>
+                <strong>TO:</strong> ${location}<br>
             `;
             $("#modal-body").html(html);
             

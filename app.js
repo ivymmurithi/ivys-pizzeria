@@ -1,6 +1,8 @@
 $(document).ready( function() {
 
-    // Business-logic
+    /**
+     * Business Logic
+     */
 
     class Pizza  {
         constructor(flavor, size, crust, toppings, number) {
@@ -34,11 +36,15 @@ $(document).ready( function() {
 
         toHtml() {
             return `<p>${this.size} ${this.flavor} with ${this.toppings} topping 
-                    and ${this.crust} crust for ${this.getPriceTotal()}</p>`;         
+                    and ${this.crust} crust for ${this.getPriceTotal()}</p>`;
         }
+        
     }
 
     function getCartTotal(cart) {
+        // This just makes sure the cart is
+        // not undefined, if it is it returns
+        // a total of 0
         if ( !("cart" in window) ){
             return 0;
         }
@@ -73,8 +79,8 @@ $(document).ready( function() {
             return
         } else {
             cart.forEach((pizza_) => {
-                newHtml = pizza_.toHtml();
-                oldHtml = pizza.toHtml();
+                let newHtml = pizza_.toHtml();
+                let oldHtml = pizza.toHtml();
                 if(newHtml.substring(0, newHtml.lastIndexOf(' ')) === oldHtml.substring(0, oldHtml.lastIndexOf(' '))){
                     pizza_.number += 1;
                     added = true;
@@ -88,7 +94,9 @@ $(document).ready( function() {
         }
     }
 
-    // User-Logic
+    /**
+     * User Logic
+     */
 
     $('form').submit(function getInput(event) {
         let pizza = formToDictionary($(this).serializeArray());
@@ -105,7 +113,7 @@ $(document).ready( function() {
         return;
     });
 
-    $('.btn').click(function increment() {
+    $('.btn').click( function increment() {
         let input_form = $(this).parent().find('input');
         let current_value = input_form.val();
         if( $(this).html() === "+" ) {
@@ -119,20 +127,23 @@ $(document).ready( function() {
         }
     });
 
-    $('#checkout').click(function renderLocation(){
-        if($(this).html() === "checkout"){
+    $('#checkout').click( function renderLocation() {
+        if($(this).html() === "Checkout") {
             let html = `
-            <h4> PLease tell us your delivery location</h4>;
-            <inputbtype="text" name="location" id="location-input"/>`;
+                <h4>Please tell us your delivery location(Optional)</h4>
+                <input type="text" name="location" id="location-input"/>
+            `;
             $(this).html("Confirm");
             $("#modal-body").html(html);
         } else {
             let location = $("#location-input").val();
             let html = `
-            <h4>Delivering:</h4><br>
-            ${generateCartEntries()}<br>
-            TO: ${location}<br>`;
+                <h4>Delivering:</h4><br>
+                ${generateCartEntries()}<br>
+                TO: ${location}<br>
+            `;
             $("#modal-body").html(html);
+            
             $(".modal-footer").remove();
         }
     });

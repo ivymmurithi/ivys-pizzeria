@@ -1,18 +1,6 @@
 $(document).ready( function() {
 
-    $('.btn').click(function increment() {
-        let input_form = $(this).parent().find('input');
-        let current_value = input_form.val();
-        if( $(this).html() === "+" ) {
-            let new_value = parseInt(current_value)+1;
-            input_form.val(new_value);
-        } 
-        if( $(this).html() === "-" ) {
-            if (current_value == 1) return;
-            let new_value = parseInt(current_value)-1;
-            input_form.val(new_value);
-        }
-    });
+    // Business-logic
 
     class Pizza  {
         constructor(flavor, size, crust, toppings, number) {
@@ -46,12 +34,14 @@ $(document).ready( function() {
 
         toHtml() {
             return `<p>${this.size} ${this.flavor} with ${this.toppings} topping 
-                    and ${this.crust} crust for ${this.getPriceTotal()}</p>`;
+                    and ${this.crust} crust for ${this.getPriceTotal()}</p>`;         
         }
-        
     }
 
     function getCartTotal(cart) {
+        if ( !("cart" in window) ){
+            return 0;
+        }
         let total = 0;
         cart.forEach(pizza => {
             total += pizza.getPriceTotal();
@@ -72,6 +62,7 @@ $(document).ready( function() {
         window.cart.forEach((pizza) => {
             html += pizza.toHtml() + "<br>";
         });
+        html += `<p><strong>TOTAL</strong>: ${getCartTotal(window.cart)}</p>`;
         return html;
     }
 
@@ -97,6 +88,8 @@ $(document).ready( function() {
         }
     }
 
+    // User-Logic
+
     $('form').submit(function getInput(event) {
         let pizza = formToDictionary($(this).serializeArray());
         pizza = new Pizza(pizza.flavor, pizza.Size, pizza.Crust, pizza.Toppings, pizza.pizzas);
@@ -110,6 +103,38 @@ $(document).ready( function() {
         $("#modal").modal('show');
         event.preventDefault();
         return;
+    });
+
+    $('.btn').click(function increment() {
+        let input_form = $(this).parent().find('input');
+        let current_value = input_form.val();
+        if( $(this).html() === "+" ) {
+            let new_value = parseInt(current_value)+1;
+            input_form.val(new_value);
+        } 
+        if( $(this).html() === "-" ) {
+            if (current_value == 1) return;
+            let new_value = parseInt(current_value)-1;
+            input_form.val(new_value);
+        }
+    });
+
+    $('#checkout').click(function renderLocation(){
+        if($(this).html() === "checkout"){
+            let html = `
+            <h4> PLease tell us your delivery location</h4>;
+            <inputbtype="text" name="location" id="location-input"/>`;
+            $(this).html("Confirm");
+            $("#modal-body").html(html);
+        } else {
+            let location = $("#location-input").val();
+            let html = `
+            <h4>Delivering:</h4><br>
+            ${generateCartEntries()}<br>
+            TO: ${location}<br>`;
+            $("#modal-body").html(html);
+            $(".modal-footer").remove();
+        }
     });
 
 });

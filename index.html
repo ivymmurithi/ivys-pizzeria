@@ -26,7 +26,7 @@
             <div class="navbar-nav">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
               <a class="nav-link" href="#menu">Menu</a>
-              <a class="nav-link" href="#">About Us</a>        
+              <a class="nav-link" href="#">Checkout</a>        
             </div>
           </div>
         </div>
@@ -67,8 +67,8 @@
       <div class="menu" id="menu">
       <div class="container">
         <div class="row row-cols-3">
-          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image">
-            
+
+          <div class="col"><img src="./images/pizza.jpg" alt="Pizza image">           
             <form>
               <input type="text" name="flavor" value="bbq-steak" hidden>
               <div class="form-check">
@@ -142,13 +142,11 @@
               <input class="totalPlaced form-control" type="text" value="1" name="pizzas" aria-label="readonly input example" readonly>
             </div>
             <button type="submit" class="btn btn-warning">Add to Cart</button>
-            </form>
-            
+            </form>           
             <br>
           </div>
 
           <div class="col"><img src="./images/pizza.jpg" alt="Pizza image">
-
           <form>
             <input type="text" name="flavor" value="hawaiian" hidden>
             <div class="form-check">
@@ -183,16 +181,14 @@
             <input class="totalPlaced form-control" type="text" value="1" name="pizzas" aria-label="readonly input example" readonly>
           </div>
           <button type="submit" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal">Add to Cart</button>
-          </form>
-          
-          
+          </form>                    
           <br>
-
         </div>
       </div>
     </div>
     </div>
 
+    <!-- Cart -->
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -204,12 +200,13 @@
             
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-danger">Checkout</button>
+            <button type="button" id="checkout" class="btn btn-danger">Checkout</button>
           </div>
         </div>
       </div>
     </div>    
 
+      <!-- Javascript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
     <script src="./app.js"></script>

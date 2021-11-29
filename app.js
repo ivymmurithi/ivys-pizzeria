@@ -42,9 +42,6 @@ $(document).ready( function() {
     }
 
     function getCartTotal(cart) {
-        // This just makes sure the cart is
-        // not undefined, if it is it returns
-        // a total of 0
         if ( !("cart" in window) ){
             return 0;
         }

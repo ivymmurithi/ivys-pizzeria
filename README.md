@@ -1,6 +1,10 @@
 # Application name
 Ivy's Pizzeria
 
+[Homepage image](./images/homepage.png)
+
+[Menu image](./images/menu.png)
+
 ## Description
 This is a webapp for my pizza restaurant that allows customers to make unlimited pizza orders at any time and also they can request delivery option to their doorstep with our pick up mtaani method. The customer can also see their total and also get notified with a pop up showing their order summary and their delivery location. This will boost my business and help it grow.
 
